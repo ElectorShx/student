@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shx.student.mapper.StudentMapper">
+
+    <select id="findBySno" resultType="com.shx.student.pojo.Student">
+        SELECT *FROM student WHERE sno=#{sno}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO student(sno,sname,age,classno) values(#{sno},#{sname},#{age},#{classno})
+    </insert>
+
+</mapper>

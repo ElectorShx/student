@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shx.student.mapper.MajorMapper">
+
+    <resultMap id="otherMajor" type="com.shx.student.pojo.Major">
+        <id property="mname" column="majorname"/>
+        <result property="dno" column="dno"/>
+    </resultMap>
+
+    <select id="findByMname" resultMap="otherMajor" >
+        SELECT * from dm where majorname=#{mname}
+    </select>
+    <select id="findAllMajorByDno" resultType="String">
+        SELECT majorname from dm where dno=#{dno}
+    </select>
+
+    <insert id="insert">
+        insert into dm(majorname,dno ) values (#{mname},#{dno})
+    </insert>
+
+</mapper>

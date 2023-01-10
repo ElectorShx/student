@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace用于指定当前的映射文件和哪个接口进行映射,需要指定接口的文件路径,路径需要是包的完整路径结构-->
+<mapper namespace="com.shx.student.mapper.DepartmentMapper">
+    <select id="findByDno" resultType="com.shx.student.pojo.Department">
+        select * FROM department where dno=#{dno}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO department(dno,dname,dlocation,dcount,dorm) values (#{dno},#{dname},#{dlocation},0,#{dorm})
+    </insert>
+
+    <select id="findAllDepartment" resultType="com.shx.student.pojo.Department">
+        select * FROM department ORDER BY dno ASC
+    </select>
+</mapper>

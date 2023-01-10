@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shx.student.mapper.ClassMapper">
+    <insert id="insert">
+        INSERT INTO class(classno,majorname,classyear,classcount) VALUES (#{classno},#{majorname},#{classyear},0)
+    </insert>
+
+    <select id="findByClassno" resultType="com.shx.student.pojo.Class">
+        SELECT * FROM class WHERE classno=#{classno}
+    </select>
+
+</mapper>
